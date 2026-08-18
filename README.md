@@ -14,32 +14,36 @@ Developed as part of the MSc Bioinformatics program at the University of Bath (H
 - Hi-C contacts are significantly depleted, rather than enriched, at parasitism gene islands
 - Parasitism islands occupy a distinct, repressive chromatin environment relative to the rest of the genome
 
-## Repository Structure
+## Scripts
 
-```
-.
-|-- HiC_scripts/
-|   |-- contacts_per_crom.py          Per-chromosome Hi-C contact counting
-|   `-- generate_FitHiC_inputs.py     Builds input files for FitHiC significant contact/loop calling
-|
-|-- CUT&Tag_scripts/
-|   |-- SEACR_bash.sh                 SEACR peak calling
-|   |-- filter_SEACR.py               Post-processing/filtering of SEACR peak calls
-|   `-- macs3_bash.sh                 MACS3 peak calling (benchmark comparison)
-|
-|-- overlap_analysis_scripts/
-|   |-- circular_genomic_permutation.py   Monte Carlo circular permutation testing
-|   `-- overlap_analysis.py               Overlap of Hi-C contacts/loops, CUT&Tag peaks,
-|                                          and parasitism gene islands
-|
-|-- functional_annotation_scripts/
-|   |-- HiC_functional_analysis.py    PFAM enrichment for genes at significant Hi-C contacts
-|   |-- peak_functional_analysis.py   PFAM enrichment for genes at CUT&Tag peaks
-|   `-- x2_functional_analysis.py     PFAM enrichment for genes in A/B compartments
-|
-|-- figures/                          Figures and the scripts used to generate them
-`-- README.md
-```
+### `HiC_scripts/`
+| Script | Description |
+|---|---|
+| `contacts_per_crom.py` | Per-chromosome Hi-C contact counting |
+| `generate_FitHiC_inputs.py` | Builds input files for FitHiC significant contact/loop calling |
+
+### `CUT&Tag_scripts/`
+| Script | Description |
+|---|---|
+| `SEACR_bash.sh` | SEACR peak calling |
+| `filter_SEACR.py` | Post-processing/filtering of SEACR peak calls |
+| `macs3_bash.sh` | MACS3 peak calling (benchmark comparison) |
+
+### `overlap_analysis_scripts/`
+| Script | Description |
+|---|---|
+| `circular_genomic_permutation.py` | Monte Carlo circular permutation testing |
+| `overlap_analysis.py` | Overlap of Hi-C contacts/loops, CUT&Tag peaks, and parasitism gene islands |
+
+### `functional_annotation_scripts/`
+| Script | Description |
+|---|---|
+| `HiC_functional_analysis.py` | PFAM enrichment for genes at significant Hi-C contacts |
+| `peak_functional_analysis.py` | PFAM enrichment for genes at CUT&Tag peaks |
+| `x2_functional_analysis.py` | PFAM enrichment for genes in A/B compartments |
+
+### `figures/`
+Figures and the scripts used to generate them.
 
 ## Methods Summary
 
