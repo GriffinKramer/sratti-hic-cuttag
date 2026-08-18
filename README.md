@@ -15,20 +15,28 @@ Developed as part of the MSc Bioinformatics program at the University of Bath (H
 - Parasitism islands occupy a distinct, repressive chromatin environment relative to the rest of the genome
 
 ## Repository Structure
-
-```
 .
-├── HiC_scripts/                      # Hi-C read processing, alignment, contact matrix
-│                                      # generation, A/B compartment calling, and loop calling
-├── CUT&Tag_scripts/                   # CUT&Tag read processing, alignment, and peak calling
-├── overlap_analysis_scripts/         # Monte Carlo circular permutation testing of overlap
-│                                      # between Hi-C contacts/loops, CUT&Tag peaks, and
-│                                      # parasitism gene islands
-├── functional_annotation_scripts/    # PFAM domain enrichment (Fisher's exact test + BH
-│                                      # correction) and UpSet analysis of shared domains
-├── figures/                          # Figure generation scripts and outputs
+├── HiC_scripts/
+│   ├── contacts_per_crom.py          # Per-chromosome Hi-C contact counting
+│   └── generate_FitHiC_inputs.py     # Builds input files for FitHiC significant contact/loop calling
+│
+├── CUT&Tag_scripts/
+│   ├── SEACR_bash.sh                 # SEACR peak calling
+│   ├── filter_SEACR.py               # Post-processing/filtering of SEACR peak calls
+│   └── macs3_bash.sh                 # MACS3 peak calling (benchmark comparison)
+│
+├── overlap_analysis_scripts/
+│   ├── circular_genomic_permutation.py  # Monte Carlo circular permutation testing
+│   └── overlap_analysis.py              # Overlap of Hi-C contacts/loops, CUT&Tag peaks,
+│                                         # and parasitism gene islands
+│
+├── functional_annotation_scripts/
+│   ├── HiC_functional_analysis.py    # PFAM enrichment for genes at significant Hi-C contacts
+│   ├── peak_functional_analysis.py   # PFAM enrichment for genes at CUT&Tag peaks
+│   └── x2_functional_analysis.py     # PFAM enrichment for genes in A/B compartments
+│
+├── figures/                          # Figures and the scripts used to generate them
 └── README.md
-```
 
 ## Methods Summary
 
